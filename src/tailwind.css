@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+
+body {
+  background: #1a1a1d;
+}
+
+.actionButton {
+  @apply rounded-md text-xl select-none;
+}
+
+.animatedGrowButton {
+  @apply transition ease-in delay-100 duration-300 hover:scale-125;
+}
+
+.textLabel {
+  position: absolute;
+  font-size: 1rem;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #1a1a1d;
+  color: gray;
+  padding: 0 0.3rem;
+  margin: 0 0.5rem;
+  transition: .1s ease-out;
+  transform-origin: left top;
+  pointer-events: none;
+}
+
+.textInput {
+  font-size: 1rem;
+  outline: none;
+  border: 0px solid gray;
+  border-bottom-width: 1px;
+  padding: 1rem 0.7rem;
+  color: gray;
+  transition: 0.1s ease-out;
+  background-color: #1a1a1d
+}
+
+.textInput:focus {
+  border-color: #6a5acd;  
+}
+.textInput:focus + .textLabel {
+  color: #6a5acd;
+  top: 0;
+  transform: translateY(-50%) scale(.9);
+}
+
+.textInput:not(:placeholder-shown) + .textLabel {
+  top: 0;
+  transform: translateY(-50%) scale(.8);
+}
+
+.homeIcon {
+  @apply h-[5vh] w-10 text-white cursor-pointer transition delay-100 duration-300 hover:text-sky-400 overflow-hidden
+}
+
+.center {
+  @apply flex flex-col h-[95vh] justify-center items-center 
+}
+
+@tailwind utilities;
